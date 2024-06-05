@@ -1,0 +1,2 @@
+[[Quick Guide]]
+[[Detailed Guide]]
