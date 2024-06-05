@@ -2,7 +2,9 @@
 
 #### Step 1: Install BIND
 ``
-sudo dnf install bind bind-utils
+sudo yum install bind bind-utils
 ``
-
-asd
+#### Step 2: Configure BIND
+``
+sudo nano /etc/named.conf
+``
