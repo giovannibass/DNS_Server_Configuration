@@ -1,1 +1,2 @@
 ## Quick Guide
+[[Quick Guide]]
