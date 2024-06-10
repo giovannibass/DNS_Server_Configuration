@@ -22,7 +22,7 @@ listen-on port 53 { 127.0.0.1; [IP SERVER WILL LISTEN ON]; };
 allow-query { localhost; [QUERY]; };
 ```
 
-`allow-query` will except values of:
+`allow-query` will accept values of:
 any              # Allow queries from anyone
 192.168.1.1      # Allow queries from a specific address
 192.168.1.0/24   # Allow queries from a specific subnet
