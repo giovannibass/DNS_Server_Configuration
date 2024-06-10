@@ -1,6 +1,9 @@
 ## Basic DNS Server Installation and Configuration
 
-Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [quick guide](#quick-guide) and a more detailed guide that explains the ins and outs much better.
+Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [quick guide](#quick-guide) and a more detailed guide (coming soon) for beginners that explains the ins and outs of DNS configuration.
+
+#### Script Usage
+This script is optimized for home lab environments and comes with default configuration settings. However, it allows you to specify the DNS server's listening address, accepted queries, and domain name. While it's capable of supporting multiple machines, additional configuration is required. Future updates will focus on enhancing customization options and improving usability for corporate environments.
 
 #### Quick Guide
 1. Install BIND
@@ -70,3 +73,7 @@ sudo systemctl status named
 
 7. Verify the DNS is up with `dig`
 dig @localhost [DOMAIN_NAME]
+
+And now you're all done!
+
+
