@@ -1,6 +1,6 @@
 ## Basic DNS Server Installation and Configuration
 
-Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [[Quick Guide]]
+Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [quick guide](#quick-guide) and a more detailed guide that explains the ins and outs much better.
 
 #### Quick Guide
 1. Install BIND
