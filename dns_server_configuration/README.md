@@ -36,6 +36,7 @@ sudo vim /var/named/[DOMAIN_NAME].zone
 ```
 
 Paste the following, adjusting as needed.
+```
 $TTL 86400
 @   IN  SOA     ns1.[DOMAIN_NAME]. admin.[DOMAIN_NAME]. (
             2021050101 ; Serial
@@ -48,6 +49,7 @@ $TTL 86400
 @       IN  A       192.168.1.10
 ns1     IN  A       192.168.1.10
 www     IN  A       192.168.1.10
+```
 
 4. Add a zone declaration in the BIND confiugration file.
 ```bash
