@@ -85,7 +85,7 @@ As of right now the shell script comes with 2 options: -d and -a
 
 `Usage: sudo ./quicknfs.sh [-d DIRECTORY] [-a ACCESS]`
 
-`-d`: Allows you to specify the name of the shared directory. This can be one that already exists. If it doesn't then a new one with the specified name will be created. If this option is not selected then a folder called *nfs_share* will be created in the directory that the script was executed then.
+**-d**: Allows you to specify the name of the shared directory. This can be one that already exists. If it doesn't then a new one with the specified name will be created. If this option is not selected then a folder called *nfs_share* will be created in the directory that the script was executed then.
 
-`-a`: Allows you to determine which clients can access the shared drive. You can specify an IP address, subnet, or hostname. If left blank then '*' will be used, meaning that anyone connected to the network can access the share.
+**-a**: Allows you to determine which clients can access the shared drive. You can specify an IP address, subnet, or hostname. If left blank then '*' will be used, meaning that anyone connected to the network can access the share.
 
