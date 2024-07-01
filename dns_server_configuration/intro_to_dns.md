@@ -1,9 +1,19 @@
 # Basic DNS Server Installation and Configuration
 
-Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [quick guide](#quick-guide) and a more [detailed guide](#detailed-guide) for beginners that explains the ins and outs of DNS configuration.
+Welcome! Here we'll be going over the basics of manually setting up a DNS server as well as going over the script I made to speed up this process. Below there is a [quick guide](#quick-guide) for beginners that explains the ins and outs of DNS configuration.
 
 ## Script Usage
-This script is optimized for home lab environments and comes with default configuration settings. However, it allows you to specify the DNS server's listening address, accepted queries, and domain name. While it's capable of supporting multiple machines, additional configuration is required. Future updates will focus on enhancing customization options and improving usability for corporate environments.
+As of right now the shell script comes with 3 options:
+
+"Usage: sudo ./quickdns [-lqd]"
+
+Example:
+`sudo ./quickdns -l 192.168.1.10 -q 192.168.1.0/24 -d wowthatwasfast.com`
+
+**-l**: This value specifies the IP address that the DNS server will *listen* on. More often than not it will be the same as your machine's IP.
+**-q**: Determines which network(s) the server will accept *queries* from. This can be a single IP, subnet, or hostname.
+**-d**: Specify the name of the domain. It will need an appropriate TLD ending (.com, .org, etc.)
+
 
 ## Quick Guide
 1. Install BIND
@@ -51,6 +61,13 @@ ns1     IN  A       192.168.1.10
 www     IN  A       192.168.1.10
 ```
 
+If you've never seen a zone file before this can look like a lot. The most important thing to know are TTL (Time-to-live) which determmines how long DNS records are cached in devices before that device reaches out to the server for an update. In the example above that would be once every 86400 seconds (24 hours). 
+
+**Wouldn't updating the records every few seconds be more accurate?** Yes, but in return everything would be much slower since the checks are being ran more frequently. DNS records don't change that often.
+
+To learn about SOA (Start of Authority) and more, visit this resource from [Cloudfare](https://www.cloudflare.com/learning/dns/glossary/dns-zone/)
+
+
 4. Add a zone declaration in the BIND confiugration file.
 ```bash
    zone "[DOMAIN_NAME]" IN {
@@ -73,9 +90,7 @@ sudo systemctl enable named
 sudo systemctl status named
 ```
 
-7. Verify the DNS is up with `dig`
+7. Verify the DNS server is up with `dig`
 dig @localhost [DOMAIN_NAME]
 
 And now you're all done!
-
-## Detailed Guide
