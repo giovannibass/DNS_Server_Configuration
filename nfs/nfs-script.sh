@@ -1,6 +1,18 @@
 #!/bin/bash
 
 # Script for quickly setting up an NFS server.
+# 
+#
+# This is not designed for thorough NFS configuration. As of right now you can customize the directory and the IP/subnet clients need to be connected to in order to access the share.
+#
+# Created by Giovanni Bass II
+
+
+# Usage fucntion
+usage() {
+echo "Usage: $0 [-d DIRECTORY] [-a ACCESS]"
+exit 1
+}
 
 # Function to check if a command was properly executed
 check() {
@@ -19,10 +31,12 @@ then
 fi
 
 # Command line options
-while getopts "d:" OPTION
+while getopts "d:a:" OPTION
 do
 	case "${OPTION}" in
 		d) DIRECTORY=${OPTARG};;
+		a) ACCESS=${OPTARG};;
+		?) usage;;
 	esac
 done
 
@@ -36,6 +50,13 @@ then
 	echo "[-] No directory specified. Using current one: ${DIRECTORY}"
 else
 	echo "[-] Using directory: ${DIRECTORY}"
+fi
+
+# Set default access if not provided
+if [[ -z ${ACCESS} ]]
+then
+	ACCESS="*"
+	echo "[!] No access specified. Using default: $ACCESS"
 fi
 
 # Check if NFS Server packages have been installed. If not, install them.
@@ -76,7 +97,7 @@ else
 fi
 
 echo "[-] Configuring NFS exports"
-echo "${DIRECTORY} *(rw,sync,no_subtree_check)" >> /etc/exports
+echo "${DIRECTORY} ${ACCESS}(rw,sync,no_subtree_check)" >> /etc/exports
 
 # Export the shared directory
 echo "[-] Exporting the shared directory..."
