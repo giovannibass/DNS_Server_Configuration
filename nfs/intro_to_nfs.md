@@ -81,7 +81,7 @@ sudo mount -t nfs <server_ip>:/path/to/shared/folder /where/to/mount
 Head over to the directory and you should be able to access the contents of your shared folder (unless the permissions in the exports folder state otherwise)!
 
 ## Script Usage
-As of right now the script comes with 2 options: -d and -a
+As of right now the shell script comes with 2 options: -d and -a
 
 `Usage: sudo ./quicknfs.sh [-d DIRECTORY] [-a ACCESS]`
 
