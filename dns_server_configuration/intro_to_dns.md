@@ -11,7 +11,9 @@ Example:
 `sudo ./quickdns -l 192.168.1.10 -q 192.168.1.0/24 -d wowthatwasfast.com`
 
 **-l**: This value specifies the IP address that the DNS server will *listen* on. More often than not it will be the same as your machine's IP.
+
 **-q**: Determines which network(s) the server will accept *queries* from. This can be a single IP, subnet, or hostname.
+
 **-d**: Specify the name of the domain. It will need an appropriate TLD ending (.com, .org, etc.)
 
 
