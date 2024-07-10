@@ -18,7 +18,7 @@ Example:
 ## Quick Guide
 1. Install BIND
 ```bash
-sudo dnf install bind bind-utils
+sudo yum install bind bind-utils
 ```
 
 2. Configure BIND
