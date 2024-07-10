@@ -32,13 +32,19 @@ listen-on port 53 { 127.0.0.1; [IP SERVER WILL LISTEN ON]; };
 allow-query { localhost; [QUERY]; };
 ```
 
-`allow-query` will accept values of:
-any              # Allow queries from anyone
-192.168.1.1      # Allow queries from a specific address
-192.168.1.0/24   # Allow queries from a specific subnet
-localnets        # Allow queries from networks directly connected to the server
-none             # No queries
-custom_acl       # A custom ACL
+**allow-query** will accept values of:
+
+any - Allow queries from anyone
+
+192.168.1.1 - Allow queries from a specific address
+
+192.168.1.0/24 - Allow queries from a specific subnet
+
+localhost - Allow queries from networks directly connected to the server
+
+none - No queries
+
+custom_acl - A custom ACL
 
 3. Create a zone file for the domain
 ```
