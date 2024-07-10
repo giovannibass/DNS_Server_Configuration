@@ -74,7 +74,7 @@ If you've never seen a zone file before this can look like a lot. The most impor
 To learn about SOA (Start of Authority) and more, visit this resource from [Cloudfare](https://www.cloudflare.com/learning/dns/glossary/dns-zone/)
 
 
-4. Add a zone declaration in the BIND confiugration file.
+4. Add a zone declaration in the BIND configuration file.
 ```bash
    zone "[DOMAIN_NAME]" IN {
        type master;
